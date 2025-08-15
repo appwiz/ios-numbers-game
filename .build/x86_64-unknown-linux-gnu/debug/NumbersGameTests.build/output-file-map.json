@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/master.swiftdeps"
+  },
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/Tests/NumbersGameTests/NumbersGameTests.swift": {
+    "dependencies": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.d",
+    "object": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.swift.o",
+    "swiftmodule": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.swiftdeps"
+  }
+}

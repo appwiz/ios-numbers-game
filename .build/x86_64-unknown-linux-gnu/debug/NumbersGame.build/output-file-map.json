@@ -1,0 +1,23 @@
+{
+  "": {
+    "swift-dependencies": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/master.swiftdeps"
+  },
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/Sources/NumbersGame/Models/GameModel.swift": {
+    "dependencies": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GameModel.d",
+    "object": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GameModel.swift.o",
+    "swiftmodule": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GameModel~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GameModel.swiftdeps"
+  },
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/Sources/NumbersGame/Models/GridModel.swift": {
+    "dependencies": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GridModel.d",
+    "object": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GridModel.swift.o",
+    "swiftmodule": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GridModel~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GridModel.swiftdeps"
+  },
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/Sources/NumbersGame/Models/Question.swift": {
+    "dependencies": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/Question.d",
+    "object": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/Question.swift.o",
+    "swiftmodule": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/Question~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/Question.swiftdeps"
+  }
+}

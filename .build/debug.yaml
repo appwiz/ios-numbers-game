@@ -1,0 +1,164 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "NumbersGame-x86_64-unknown-linux-gnu-debug.module": ["<NumbersGame-x86_64-unknown-linux-gnu-debug.module>"]
+  "NumbersGamePackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module": ["<NumbersGamePackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module>"]
+  "NumbersGamePackageTests-x86_64-unknown-linux-gnu-debug.module": ["<NumbersGamePackageTests-x86_64-unknown-linux-gnu-debug.module>"]
+  "NumbersGamePackageTests-x86_64-unknown-linux-gnu-debug.test": ["<NumbersGamePackageTests-x86_64-unknown-linux-gnu-debug.test>"]
+  "NumbersGameTests-x86_64-unknown-linux-gnu-debug.module": ["<NumbersGameTests-x86_64-unknown-linux-gnu-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<NumbersGame-x86_64-unknown-linux-gnu-debug.module>"]
+  "test": ["<NumbersGame-x86_64-unknown-linux-gnu-debug.module>","<NumbersGamePackageTests-x86_64-unknown-linux-gnu-debug.test>","<NumbersGameTests-x86_64-unknown-linux-gnu-debug.module>"]
+default: "main"
+nodes:
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/Sources/NumbersGame/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/Tests/NumbersGameTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/NumbersGame.swiftmodule.o":
+    tool: shell
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGame.swiftmodule"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/NumbersGame.swiftmodule.o"]
+    description: "Wrapping AST for NumbersGame for debugging"
+    args: ["/usr/share/swift/usr/bin/swiftc","-modulewrap","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGame.swiftmodule","-o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/NumbersGame.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/home/runner/work/ios-numbers-game/ios-numbers-game/Sources/NumbersGame/Models/GameModel.swift","/home/runner/work/ios-numbers-game/ios-numbers-game/Sources/NumbersGame/Models/GridModel.swift","/home/runner/work/ios-numbers-game/ios-numbers-game/Sources/NumbersGame/Models/Question.swift"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/sources"]
+    description: "Write auxiliary file /home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/sources"
+
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/NumbersGamePackageDiscoveredTests.swiftmodule.o":
+    tool: shell
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGamePackageDiscoveredTests.swiftmodule"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/NumbersGamePackageDiscoveredTests.swiftmodule.o"]
+    description: "Wrapping AST for NumbersGamePackageDiscoveredTests for debugging"
+    args: ["/usr/share/swift/usr/bin/swiftc","-modulewrap","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGamePackageDiscoveredTests.swiftmodule","-o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/NumbersGamePackageDiscoveredTests.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.derived/NumbersGameTests.swift","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.derived/all-discovered-tests.swift"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/sources"]
+    description: "Write auxiliary file /home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/sources"
+
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.derived/all-discovered-tests.swift":
+    tool: test-discovery-tool
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.swift.o"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.derived/NumbersGameTests.swift","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.derived/all-discovered-tests.swift"]
+
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/NumbersGamePackageTests.swiftmodule.o":
+    tool: shell
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGamePackageTests.swiftmodule"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/NumbersGamePackageTests.swiftmodule.o"]
+    description: "Wrapping AST for NumbersGamePackageTests for debugging"
+    args: ["/usr/share/swift/usr/bin/swiftc","-modulewrap","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGamePackageTests.swiftmodule","-o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/NumbersGamePackageTests.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.derived/runner.swift"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/sources"]
+    description: "Write auxiliary file /home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/sources"
+
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.derived/runner.swift":
+    tool: test-entry-point-tool
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGamePackageDiscoveredTests.swiftmodule"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.derived/runner.swift"]
+
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GameModel.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GridModel.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/NumbersGame.swiftmodule.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/Question.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/NumbersGamePackageDiscoveredTests.swiftmodule.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/NumbersGameTests.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/all-discovered-tests.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/NumbersGamePackageTests.swiftmodule.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/runner.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.swiftmodule.o"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.product/Objects.LinkFileList"
+
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.swiftmodule.o":
+    tool: shell
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGameTests.swiftmodule"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.swiftmodule.o"]
+    description: "Wrapping AST for NumbersGameTests for debugging"
+    args: ["/usr/share/swift/usr/bin/swiftc","-modulewrap","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGameTests.swiftmodule","-o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/home/runner/work/ios-numbers-game/ios-numbers-game/Tests/NumbersGameTests/NumbersGameTests.swift"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/sources"]
+    description: "Write auxiliary file /home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/sources"
+
+  "/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/usr/share/swift/usr/bin/swiftc"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt"
+
+  "<NumbersGame-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GameModel.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GridModel.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/Question.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGame.swiftmodule"]
+    outputs: ["<NumbersGame-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "<NumbersGamePackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/NumbersGameTests.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/all-discovered-tests.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGamePackageDiscoveredTests.swiftmodule"]
+    outputs: ["<NumbersGamePackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "<NumbersGamePackageTests-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/runner.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGamePackageTests.swiftmodule"]
+    outputs: ["<NumbersGamePackageTests-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "<NumbersGamePackageTests-x86_64-unknown-linux-gnu-debug.test>":
+    tool: phony
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.xctest"]
+    outputs: ["<NumbersGamePackageTests-x86_64-unknown-linux-gnu-debug.test>"]
+
+  "<NumbersGameTests-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGameTests.swiftmodule"]
+    outputs: ["<NumbersGameTests-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "C.NumbersGame-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/Sources/NumbersGame/Models/GameModel.swift","/home/runner/work/ios-numbers-game/ios-numbers-game/Sources/NumbersGame/Models/GridModel.swift","/home/runner/work/ios-numbers-game/ios-numbers-game/Sources/NumbersGame/Models/Question.swift","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/sources"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GameModel.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GridModel.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/Question.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGame.swiftmodule"]
+    description: "Compiling Swift Module 'NumbersGame' (3 sources)"
+    args: ["/usr/share/swift/usr/bin/swiftc","-module-name","NumbersGame","-emit-dependencies","-emit-module","-emit-module-path","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGame.swiftmodule","-output-file-map","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/output-file-map.json","-parse-as-library","-incremental","-c","@/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/sources","-I","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-j4","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-swift-version","5","-g","-Xcc","-fPIC","-Xcc","-g","-Xcc","-fno-omit-frame-pointer"]
+
+  "C.NumbersGamePackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.derived/NumbersGameTests.swift","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.derived/all-discovered-tests.swift","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGameTests.swiftmodule","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/sources"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/NumbersGameTests.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/all-discovered-tests.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGamePackageDiscoveredTests.swiftmodule"]
+    description: "Compiling Swift Module 'NumbersGamePackageDiscoveredTests' (2 sources)"
+    args: ["/usr/share/swift/usr/bin/swiftc","-module-name","NumbersGamePackageDiscoveredTests","-emit-dependencies","-emit-module","-emit-module-path","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGamePackageDiscoveredTests.swiftmodule","-output-file-map","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/sources","-I","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j4","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-g","-Xcc","-fPIC","-Xcc","-g","-Xcc","-fno-omit-frame-pointer"]
+
+  "C.NumbersGamePackageTests-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.derived/runner.swift","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGameTests.swiftmodule","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGamePackageDiscoveredTests.swiftmodule","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/sources"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/runner.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGamePackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'NumbersGamePackageTests' (1 sources)"
+    args: ["/usr/share/swift/usr/bin/swiftc","-module-name","NumbersGamePackageTests","-emit-dependencies","-emit-module","-emit-module-path","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGamePackageTests.swiftmodule","-output-file-map","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/sources","-I","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j4","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-g","-Xcc","-fPIC","-Xcc","-g","-Xcc","-fno-omit-frame-pointer"]
+
+  "C.NumbersGamePackageTests-x86_64-unknown-linux-gnu-debug.test":
+    tool: shell
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GameModel.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/GridModel.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/NumbersGame.swiftmodule.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGame.build/Question.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/NumbersGamePackageDiscoveredTests.swiftmodule.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/NumbersGameTests.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageDiscoveredTests.build/all-discovered-tests.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/NumbersGamePackageTests.swiftmodule.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.build/runner.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.swiftmodule.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.product/Objects.LinkFileList"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.xctest"]
+    description: "Linking ./.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.xctest"
+    args: ["/usr/share/swift/usr/bin/swiftc","-L","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug","-o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.xctest","-module-name","NumbersGamePackageTests","-emit-executable","-Xlinker","-rpath=$ORIGIN","@/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGamePackageTests.product/Objects.LinkFileList","-target","x86_64-unknown-linux-gnu","-g"]
+
+  "C.NumbersGameTests-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/Tests/NumbersGameTests/NumbersGameTests.swift","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGame.swiftmodule","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/sources"]
+    outputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/NumbersGameTests.swift.o","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGameTests.swiftmodule"]
+    description: "Compiling Swift Module 'NumbersGameTests' (1 sources)"
+    args: ["/usr/share/swift/usr/bin/swiftc","-module-name","NumbersGameTests","-emit-dependencies","-emit-module","-emit-module-path","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules/NumbersGameTests.swiftmodule","-output-file-map","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/NumbersGameTests.build/sources","-I","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j4","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/home/runner/work/ios-numbers-game/ios-numbers-game/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-swift-version","5","-g","-Xcc","-fPIC","-Xcc","-g","-Xcc","-fno-omit-frame-pointer"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/home/runner/work/ios-numbers-game/ios-numbers-game/Sources/NumbersGame/","/home/runner/work/ios-numbers-game/ios-numbers-game/Tests/NumbersGameTests/","/home/runner/work/ios-numbers-game/ios-numbers-game/Package.swift","/home/runner/work/ios-numbers-game/ios-numbers-game/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
