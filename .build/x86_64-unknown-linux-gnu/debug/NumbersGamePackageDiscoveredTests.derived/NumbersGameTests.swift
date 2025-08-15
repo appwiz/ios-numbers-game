@@ -7,6 +7,7 @@ fileprivate extension NumbersGameTests {
         ("testGameModelIncorrectSolution", testGameModelIncorrectSolution),
         ("testGameModelInitialization", testGameModelInitialization),
         ("testGameModelSolutionChecking", testGameModelSolutionChecking),
+        ("testGameplayDemo", testGameplayDemo),
         ("testGridModel", testGridModel),
         ("testGridModelNumberAt", testGridModelNumberAt),
         ("testNextGrid", testNextGrid),

@@ -1,0 +1,28 @@
+# Build artifacts
+.build/
+*.derived
+*.pbxproj.bak
+
+# Xcode
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+xcuserdata/
+DerivedData/
+*.hmap
+*.ipa
+
+# macOS
+.DS_Store
+
+# Swift Package Manager
+.swiftpm/
+Packages/
+
+# CocoaPods
+Pods/
+*.podspec.local
+
+# Temporary files
+*.tmp
+*.temp
